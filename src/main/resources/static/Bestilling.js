@@ -15,23 +15,39 @@ function kjopBillet(){
     document.getElementById("etternavnError").textContent = "";
     document.getElementById("telefonError").textContent = "";
     document.getElementById("epostError").textContent = "";
-    if(!fornavn || !etternavn || !telefon || !epost || !film || !antall || isNaN(antall)){
-        if(!film){
+    if(!fornavn || !etternavn || !telefon || !epost || !film || !antall || isNaN(antall)) {
+        if (!film) {
             document.getElementById("filmError").textContent = "Må velge film";
         }
-        if(!antall || isNaN(antall)) {
+        if (!antall || isNaN(antall)) {
             document.getElementById("antallError").textContent = "Må skrive noe inn i antall";
         }
-        if(!fornavn){
+        if (!fornavn) {
             document.getElementById("fornavnError").textContent = "Må skrive noe inn i fornavn";
         }
-        if(!etternavn){
+        if (!etternavn) {
             document.getElementById("etternavnError").textContent = "Må skrive noe inn i etternavn";
         }
-        if(!telefon){
+        if (!telefon) {
             document.getElementById("telefonError").textContent = "Må skrive noe inn i telefon";
         }
-        if(!epost){
+        if (!epost) {
             document.getElementById("epostError").textContent = "Må skrive noe inn i epost";
         }
+    }
+    else{
+        billett.push({film,antall,fornavn,etternavn,telefon,epost});
+
+    }
+}
+function visBilletter(){
+    const billetListe = document.getElementById("billettListe");
+    billetListe.innerHtml = "";
+
+    billett.forEach(billett => {
+        const li = document.createElement("li");
+        //bruker $ istedenfor +
+        li.textContent = "Film" + billett.film + "Antall" + billett.antall
+            + ""
+    })
 }
