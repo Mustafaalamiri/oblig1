@@ -6,13 +6,24 @@
 </head>
 <body>
 <h1>Bestilling av kinobiletter</h1>
-<p>Velg film: </p><select>Velg film her</select>
-<p>Antall</p><input>
+<p>Velg film:</p>
+<select id="filSelect">
+    <option value="Avatar">Avatar</option>
+    <option value="Avatar">Avatar</option>
+    <option value="Avatar">Avatar</option>
+</select>
 
-<p>Fornavn</p><input>
-<p>Etternavn</p><input>
-<p>Telefonnr</p><input>
-<p>Epost</p><input>
+<p>Antall</p>
+<input type="number" id="antall" min="1" value="1">
+
+<p>Fornavn</p>
+<input type="text" id="navn">
+<p>Etternavn</p>
+<input type="text" id="etternavn">
+<p>Telefonnr</p>
+<input type="text" id="telefon">
+<p>Epost</p>
+<input type="text" id="epost">
 <button>Kjøp billett</button>
 <h2>Alle billetter</h2>
 <button>Slett alle billettene</button>
