@@ -7,4 +7,5 @@ function kjopBillet(){
     const epost= document.getElementById("epost".value);
     const antall = parseInt(document.getElementById("antall").value);
     const film = document.getElementById("film".value);
+
 }
