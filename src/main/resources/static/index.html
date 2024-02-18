@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kinobiletter</title>
+    <script src="Bestilling.js"></script>
 </head>
 <body>
 <h1>Bestilling av kinobiletter</h1>
@@ -17,7 +18,7 @@
 <input type="number" id="antall" min="1" value="1">
 
 <p>Fornavn</p>
-<input type="text" id="navn">
+<input type="text" id="fornavn">
 <p>Etternavn</p>
 <input type="text" id="etternavn">
 <p>Telefonnr</p>
@@ -26,6 +27,7 @@
 <input type="text" id="epost">
 <button onclick="kjopBillett()">Kjøp billett</button>
 <h2>Alle billetter</h2>
+<ul id="billettListe"></ul>
 <button onclick="slettBilletter()">Slett alle billettene</button>
 </body>
 </html>
