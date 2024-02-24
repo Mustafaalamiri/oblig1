@@ -1,16 +1,16 @@
 let billett = [];
 
 function kjopBillett(){
-    const fornavn= document.getElementById("fornavn".value);
-    const etternavn= document.getElementById("etternavn".value);
-    const telefon= document.getElementById("telefon".value);
-    const epost= document.getElementById("epost".value);
+    const fornavn= document.getElementById("fornavn").value;
+    const etternavn= document.getElementById("etternavn").value;
+    const telefon= document.getElementById("telefon").value;
+    const epost= document.getElementById("epost").value;
     const antall = parseInt(document.getElementById("antall").value);
-    const film = document.getElementById("film".value);
+    const film = document.getElementById("film").value;
 
     // bruker .textContent for å erstatte/redigere tekst i span-elementene
     document.getElementById("filmError").textContent = "";
-    document.getElementById("antallError").textContent = "";
+    document.getElementById("nummerError").textContent = "";
     document.getElementById("fornavnError").textContent = "";
     document.getElementById("etternavnError").textContent = "";
     document.getElementById("telefonError").textContent = "";
@@ -19,8 +19,8 @@ function kjopBillett(){
         if (!film) {
             document.getElementById("filmError").textContent = "Må velge film";
         }
-        if (!antall || isNaN(antall)) {
-            document.getElementById("antallError").textContent = "Må skrive noe inn i antall";
+        if (!antall || isNaN(antall ) || antall <=0) {
+            document.getElementById("nummerError").textContent = "Må skrive noe inn i antall";
         }
         if (!fornavn) {
             document.getElementById("fornavnError").textContent = "Må skrive noe inn i fornavn";
@@ -43,14 +43,14 @@ function kjopBillett(){
 }
 function visBilletter(){
     const billetListe = document.getElementById("billettListe");
-    billetListe.innerHtml = "";
+    billetListe.innerHTML = "";
 
     billett.forEach(billett => {
         const li = document.createElement("li");
         //bruker $ istedenfor +
-        li.textContent = "Film" + billett.film + "Antall" + billett.antall
-            + "Fornavn" + billett.fornavn + "Etternavn" + billett.etternavn
-            + "Telefon" + billett.telefon + "Epost" + billett.epost;
+        li.textContent = "Film " + billett.film + " Antall " + billett.antall
+            + " Fornavn " + billett.fornavn + " Etternavn " + billett.etternavn
+            + " Telefon " + billett.telefon + " Epost " + billett.epost;
         billetListe.appendChild(li);
     })
 }
