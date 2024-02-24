@@ -1,6 +1,6 @@
 let billett = [];
 
-function kjopBillet(){
+function kjopBillett(){
     const fornavn= document.getElementById("fornavn".value);
     const etternavn= document.getElementById("etternavn".value);
     const telefon= document.getElementById("telefon".value);
@@ -37,6 +37,7 @@ function kjopBillet(){
     }
     else{
         billett.push({film,antall,fornavn,etternavn,telefon,epost});
+        visBilletter();
 
     }
 }
@@ -48,6 +49,12 @@ function visBilletter(){
         const li = document.createElement("li");
         //bruker $ istedenfor +
         li.textContent = "Film" + billett.film + "Antall" + billett.antall
-            + ""
+            + "Fornavn" + billett.fornavn + "Etternavn" + billett.etternavn
+            + "Telefon" + billett.telefon + "Epost" + billett.epost;
+        billetListe.appendChild(li);
     })
+}
+function slettBilletter(){
+    billett = [];
+    visBilletter();
 }
